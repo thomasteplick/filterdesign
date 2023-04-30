@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="eng">
+	<head>
+		<title>"Filter Design"</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<style type="text/css">
+			.options label {
+				font-size: 12px;
+				font-family: Arial, Helvetica, sans-serif;
+				width: 200px;
+				text-align: right;
+				float: left;
+			}
+			form, p{
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>Filter Design</h3>
+		<p>There is one source vertex and one sink vertex.  Enter the number of rows and 
+			columns in-between the source and sink vertices.  These will form the s-t 
+			flow network.  For example, a 10 row and 10 column flow graph will have 
+			100 vertices with 10 vertices in each row.
+		</p>
+		<div id="form">
+			<form action="http://127.0.0.1:8080/filterdesignoptions" method="post">
+				<fieldset>
+					<legend>Filter Design Options</legend>
+					<div class="options">
+						<label for="netrows" >Number of network rows (2-10):</label>
+						<input type="number" id="netrows" name="netrows" min="2" max="10"  required />
+						<br />
+						<label for="netcolumns">Number of network columns (2-10):</label>
+						<input type="number" id="netcolumns" name="netcolumns" min="2" max="10"  required />
+					</div>
+					<br />
+					<input type="submit" value="Submit" />
+				</fieldset>
+			</form>
+		</div>
+	</body>
+</html>
