@@ -5,38 +5,122 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<style type="text/css">
+
 			.options label {
 				font-size: 12px;
 				font-family: Arial, Helvetica, sans-serif;
-				width: 200px;
-				text-align: right;
-				float: left;
 			}
-			form, p{
-				width: 500px;
+			.options input {
+				width: 50px;
 			}
+
+			form, p, table, fieldset {
+				width: 600px;
+			}
+			.invalid {
+				background-color: red;
+			}
+
+			.valid {
+				background-color: green;
+			}
+
+			table input[type="text"] {
+				width: 50px;
+				margin-left: 20px;
+			}
+			.options input {
+				width: 50px;
+			}
+
+			table {
+				border: 2px solid black;
+			}
+
+			th.bands {
+				border: 2px solid black;
+				border-collapse: collapse;
+			}
+			td.bands {
+				border: 1px solid lightgray;
+				border-collapse: collapse;
+			}
+
+			ul li.links {
+				display: inline-block;
+				list-style-type: none;
+				margin: 20px;
+			}
+
 		</style>
 	</head>
 	<body>
 		<h3>Filter Design</h3>
-		<p>There is one source vertex and one sink vertex.  Enter the number of rows and 
-			columns in-between the source and sink vertices.  These will form the s-t 
-			flow network.  For example, a 10 row and 10 column flow graph will have 
-			100 vertices with 10 vertices in each row.
+		<nav>
+			<ul>
+				<li class="links"><a href="http://127.0.0.1:8080/plotfilter">Plot Filter</a></li>
+			</ul>
+		</nav>
+		<p>Filter order, type, number of frequency bands, and grid density are required inputs.  At least two 
+			rows must be completed in the frequency band table.  The frequencies are normalized between 0 and 1.
+			The value one is the Nyquist frequency and is equal to one-half the sampling frequency.  Each band
+            requires a start edge frequency and an end edge frequency.  The first frequency must be 0 and the 
+			last frequency in the table must be 1.  The amplitude columns correspond to the frequencies and need
+			an amplitude at the start frequency of the band and another amplitude for the end frequency of the  
+		    band.  Typically, the amplitudes are between 0 and 1.  A zero amplitude would be a stop band and a 
+			one amplitude would be a passband.  The weight column specifies the error tolerance for each band.  That is, 
+			how much emphasis should be given to the desired amplitude and the resultant amplitude.
 		</p>
 		<div id="form">
 			<form action="http://127.0.0.1:8080/filterdesignoptions" method="post">
 				<fieldset>
 					<legend>Filter Design Options</legend>
 					<div class="options">
-						<label for="netrows" >Number of network rows (2-10):</label>
-						<input type="number" id="netrows" name="netrows" min="2" max="10"  required />
+						<label for="order" >Filter Order:</label>
+						<input type="number" id="order" name="filterorder" min="1" value="{{.FilterOrder}}" required />
+						<label for="griddensity">Grid Density:</label>
+						<input type="number" id="griddensity" name="griddensity" min="16" value="{{.Density}}" required />
+						<label for="filtertype">Filter Type:</label>
+						<select id="filtertype" name="filtertype" required>
+							<option value="bandpass" selected>Bandpass</option>
+							<option value="differentiator">Differentiator</option>
+							<option value="hilbert">Hilbert</option>
+							<option value="lowpass">Lowpass</option>
+							<option value="highpass">Highpass</option>
+							<option value="multibandpass">Multi-Bandpass</option>
+						</select>
+						<label for="numbands">Number of Bands:</label>
+						<select id="numbands" name="numbands" required>
+							<option value="2" selected>2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+						</select>
 						<br />
-						<label for="netcolumns">Number of network columns (2-10):</label>
-						<input type="number" id="netcolumns" name="netcolumns" min="2" max="10"  required />
+						<hr />
+						<h4>Frequency Bands</h4>
+						<table>
+							<tr>
+								<th class="bands">Frequency Start</th>
+								<th class="bands">Frequency End</th>
+								<th class="bands">Amplitude Start</th>
+								<th class="bands">Amplitude End</th>
+								<th class="bands">Band Weight</th>
+							</tr>
+							{{range $property := .Bands}}
+								<tr>
+									{{range $property}}
+										<td class="bands">
+											<input type="text" name="{{.Name}}" value="{{.Value}}" class="{{.Class}}" />
+										</td>
+									{{end}}
+								</tr>
+							{{end}}
+						</table>
 					</div>
 					<br />
 					<input type="submit" value="Submit" />
+					<input type="text" size="50" name="status" value="{{.Status}}" class="{{.State}}" readonly />
 				</fieldset>
 			</form>
 		</div>
