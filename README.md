@@ -1,7 +1,5 @@
 # filterdesign
 Design a FIR filter using the Parks-McClellan algorithm
-# filterdesign
-Design a FIR filter using the Parks-McClellan algorithm
 
 This is a web application that is accessed at http://127.0.0.1/8080/filterdesignoptions.  The user
 enters the filter order, grid density, filter type, and number of bands.  After clicking on the
