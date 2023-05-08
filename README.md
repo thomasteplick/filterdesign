@@ -2,7 +2,7 @@
 Design a FIR filter using the Parks-McClellan algorithm
 
 This is a web application written in Go which uses the http/template package.  It can be accessed at http://127.0.0.1/8080/filterdesignoptions.
-The userenters the filter order, grid density, filter type, and number of bands.  After clicking on the
+The user enters the filter order, grid density, filter type, and number of bands.  After clicking on the
 submit button, a frequency band table appears. Fill in the begin and end frequency of each band, the amplitudes
 at the edges of each band, and the weights given for each band.  The frequencies are normalized
 between 0 and 1, with 1 being the Nyquist frequency (1/2 the sampling frequency).  The weight
