@@ -23,7 +23,7 @@ is 5, and the minimum is 2.  The filter coefficients are stored in the data fold
 <li>Multibandpass</li>
 <li>Differentiator</li>
 <li>Hilbert Transformer</li>
-<br/>
+</ul>
 The Parks-McClellan algorithm uses the Remez exchange algorithm and Chebyshev
 approximation theory to design filters with optimal fits between the
 desired and actual frequency responses. The filters are optimal in
