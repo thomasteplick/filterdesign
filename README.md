@@ -65,3 +65,20 @@ and the actual frequency response is minimized.
 <h3>Frequency Response</>
   
 ![image](https://user-images.githubusercontent.com/117768679/236700587-398563e8-ed96-4594-87cc-180392576b4f.png)
+
+<h3>Low Pass Filter before submission</h3>
+
+![image](https://user-images.githubusercontent.com/117768679/236735377-4187269f-01f3-41ce-ac3f-ac29d1e9ee3e.png)
+
+<h3>Low Pass Filter after submission</h3>
+
+![image](https://user-images.githubusercontent.com/117768679/236735723-7aeb48e2-4e4a-4ac0-b70e-246774e84e88.png)
+
+<h3>Impulse Response</h3>
+
+![image](https://user-images.githubusercontent.com/117768679/236735061-5f82d551-e79a-4b6a-9faa-e3f739b38b6a.png)
+
+<h3>Filter Response</h3>
+
+![image](https://user-images.githubusercontent.com/117768679/236734905-83ee92d3-9777-404e-ad29-83a2ebc955f2.png)
+
