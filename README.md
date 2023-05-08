@@ -15,7 +15,7 @@ responses can be displayed by clicking on the Plot Filter link.  Choose the file
 The frequency response is in dB.  The user can create another design by clicking on the 
 Filter Design Options link.  The Grid Density determines how accurately the filter will be constructed.
 The minimum value is 16, but higher numbers are slower to compute.  The maximum number of bands that can be designed 
-is 5, and the minimum is 2.  The filter types are
+is 5, and the minimum is 2.  The filter coefficients are stored in the data folder.  The filter types are
 <ul>
 <li>Lowpass</li>
 <li>Highpass</li>
