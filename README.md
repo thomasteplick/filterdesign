@@ -80,3 +80,19 @@ and the actual frequency response is minimized.
 
 ![image](https://user-images.githubusercontent.com/117768679/236734905-83ee92d3-9777-404e-ad29-83a2ebc955f2.png)
 
+<h3>Multibandpass Filter Before Submit</h3>
+
+![image](https://github.com/thomasteplick/filterdesign/assets/117768679/c9fee99f-2d89-48e9-85d5-a747faadb90b)
+
+<h3>Multibandpass Filter After Submit</h3>
+
+![image](https://github.com/thomasteplick/filterdesign/assets/117768679/91a6d205-b8ef-4f8d-8b54-e9d234bca035)
+
+<h3>Impulse Response</>
+  
+![image](https://github.com/thomasteplick/filterdesign/assets/117768679/23866286-4a78-4c55-b015-22295ce938ae)
+
+<h3>Filter Response</h3>
+
+![image](https://github.com/thomasteplick/filterdesign/assets/117768679/41720a72-da0a-4479-8572-c518cfa7ad00)
+
